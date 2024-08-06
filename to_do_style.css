@@ -1,40 +1,69 @@
-body {
-  font-family: Arial, sans-serif;
+body{
+  background-color:lightyellow;
+  font-family: "Kanit", sans-serif;
+  font-weight: 100;
+  font-style: normal;
+
+}
+
+form{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-  background-color: #f4f4f4;
+  justify-content:center;
+  align-items:center;
 }
 
-.container {
-  text-align: center;
-  background: #fff;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.info{
+  width:35%;
+  background-color:white;
+  text-align:center;
+  margin-top:100px;
+  padding: 8px;
+  padding-right:28px;
+  border-radius:12px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
-
-input {
-  padding: 10px;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+.info h1{
+  font-size: 36px;
+  margin:0;
+  margin-top:12px;
 }
 
-button {
-  padding: 10px;
-  border: none;
-  border-radius: 5px;
-  background-color: #007BFF;
+.add-new{
+  background-color:gray;
+  border-radius:4px;
+  font-weight: bold;
+  font-size: 22px;
+  font-family: monospace;
   color: white;
+  margin-left:12px;
+  margin-right:12px;
+  text-align: center;
   cursor: pointer;
 }
 
-button:hover {
-  background-color: #0056b3;
+.info ul li{
+  display:flex;
+  justify-content:space-between;
+  text-align: left;
+  margin:2px;
+  border-bottom: 1px solid black;
+  font-weight:bold;
+  font-size: 24px;
+}
+
+#delete-button{
+  background-color:rgb(255, 74, 74);
+  font-weight:bold;
+  font-size:20px;
+  color:white;
+  border-radius:4px;
+}
+
+footer{
+  text-align:center;
+}
+
+footer i{
+  color: red
 }

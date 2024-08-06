@@ -3,7 +3,8 @@
 
 // User clicks on the input area to type out a task.
 // User presses the Add button to add the task.
-// Task appears on the bottom.
+// Task is sent to an array
+  // Array is looped and sent out to the bottom.
   // Task has three options Description, Checkmark for Done, and a Delete Button.
   // Task is saved to local storage.
 // When User tries to delete without a checkmark, an alert appears, saying that the task hasn't been completed. delete anyways.
@@ -11,53 +12,30 @@
 
 
 
-
+let listOfTasks = [];
 document.addEventListener('DOMContentLoaded', function() {
+const form = document.querySelector('#adding-form')
 
-
-
-
-
+form.addEventListener('submit', addFunction)
 
 
 })
 
 
+// Functions
+function addFunction(e) {
+  e.preventDefault()
+  const taskInfo = document.querySelector('#task-input')
+  const task = taskInfo.value
+  listOfTasks.push(task)
+  createList()
+}
 
-
-
-
-// document.addEventListener('DOMContentLoaded', () => {
-//   const messageElement = document.getElementById('message');
-//   const userForm = document.getElementById('userForm');
-
-//   // Check if user data exists in local storage
-//   const storedProfile = localStorage.getItem('userProfile');
-
-//   if (storedProfile) {
-//       const userProfile = JSON.parse(storedProfile);
-//       messageElement.textContent = `Welcome back, ${userProfile.name}!`;
-//   } else {
-//       messageElement.textContent = 'Oh, you are new!';
-//   }
-
-//   // Handle form submission
-//   userForm.addEventListener('submit', (event) => {
-//       event.preventDefault();
-
-//       const name = document.getElementById('name').value;
-//       const age = document.getElementById('age').value;
-//       const email = document.getElementById('email').value;
-
-//       const userProfile = { name, age, email };
-
-//       // Store user profile in local storage
-//       localStorage.setItem('userProfile', JSON.stringify(userProfile));
-
-//       // Update welcome message
-//       messageElement.textContent = `Welcome back, ${name}!`;
-
-//       // Clear form
-//       userForm.reset();
-//   });
-// });
+function createList() {
+  const theList = document.querySelector('#theList')
+  listOfTasks.forEach(function(task){
+      const list = document.createElement('li')
+      list.textContent = task;
+      theList.appendChild(list)
+  })
+}
